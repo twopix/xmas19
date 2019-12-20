@@ -2256,9 +2256,10 @@ html-minifier@^3.0.1, html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "2.8.x"
 
-html-webpack-plugin@hjkcai/html-webpack-plugin:
+"html-webpack-plugin@git://github.com/hjkcai/html-webpack-plugin.git":
   version "2.28.0"
-  resolved "https://codeload.github.com/hjkcai/html-webpack-plugin/tar.gz/006459b56b71be2b006fe89f8b37ec390c2b2d1d"
+  uid "006459b56b71be2b006fe89f8b37ec390c2b2d1d"
+  resolved "git://github.com/hjkcai/html-webpack-plugin.git#006459b56b71be2b006fe89f8b37ec390c2b2d1d"
   dependencies:
     bluebird "^3.4.7"
     html-minifier "^3.2.3"
@@ -4297,8 +4298,8 @@ string_decoder@^0.10.25, string_decoder@~0.10.x:
   resolved "http://registry.npm.taobao.org/string_decoder/download/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
 stringstream@~0.0.4:
-  version "0.0.5"
-  resolved "http://registry.npm.taobao.org/stringstream/download/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.6.tgz#7880225b0d4ad10e30927d167a1d6f2fd3b33a72"
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
