@@ -2256,9 +2256,10 @@ html-minifier@^3.0.1, html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "2.8.x"
 
-html-webpack-plugin@hjkcai/html-webpack-plugin:
+"html-webpack-plugin@git://github.com/hjkcai/html-webpack-plugin.git":
   version "2.28.0"
-  resolved "https://codeload.github.com/hjkcai/html-webpack-plugin/tar.gz/006459b56b71be2b006fe89f8b37ec390c2b2d1d"
+  uid "006459b56b71be2b006fe89f8b37ec390c2b2d1d"
+  resolved "git://github.com/hjkcai/html-webpack-plugin.git#006459b56b71be2b006fe89f8b37ec390c2b2d1d"
   dependencies:
     bluebird "^3.4.7"
     html-minifier "^3.2.3"
@@ -2814,8 +2815,8 @@ lower-case@^1.1.1:
   resolved "http://registry.npm.taobao.org/lower-case/download/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
 macaddress@^0.2.8:
-  version "0.2.8"
-  resolved "http://registry.npm.taobao.org/macaddress/download/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.9.tgz#3579b8b9acd5b96b4553abf0f394185a86813cb3"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
