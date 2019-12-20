@@ -4,12 +4,32 @@ html
     meta(charset="utf8")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans")
   body
-    div
-      include ../partials/header.pug
-      p.
-        This is a simple boilerplate for making multi-page website with the power of
-        <a href="https://webpack.js.org">webpack</a>,
-        <a href="https://pugjs.org">pug</a> and
-        <a href="https://lesscss.org">LESS</a>
-      p.
-        Goto <a href="page2.html">Page 2</a>
+    .main-wrapper
+
+      .tree-container
+        .star
+        .spiral-container
+          ul.spiral.one
+            - for (var x = 1; x <=43; x++)
+              li.light-wrapper(
+                class="light-wrapper-"+x
+              )
+                .stabilise: .light
+
+          ul.spiral.two
+            - for (var x = 1; x <=43; x++)
+              li.light-wrapper(
+                class="light-wrapper-"+x
+              )
+                .stabilise: .light
+
+          ul.spiral.three
+            - for (var x = 1; x <=43; x++)
+              li.light-wrapper(
+                class="light-wrapper-"+x
+              )
+                .stabilise: .light
+
+      .text-container
+        //- h2 The best is yet to come
+        h2.happy Merry Christmas and Happy New Year
