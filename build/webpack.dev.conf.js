@@ -22,19 +22,26 @@ module.exports = merge(require('./webpack.base.conf'), {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader?importLoaders=1',
-          'postcss-loader'
-        ]
+        use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader']
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
         ]
       }
     ]
@@ -45,4 +52,4 @@ module.exports = merge(require('./webpack.base.conf'), {
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrors()
   ]
-})
+});
