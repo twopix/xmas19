@@ -1,7 +1,7 @@
 'use strict'
 
 import '../lib/style'
-
+// import img from '../assets/images/octocat.png'
 /*
  * Rabbit Lyrics
  *

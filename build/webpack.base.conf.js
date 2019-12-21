@@ -68,40 +68,40 @@ module.exports = merge({
   },
   resolve: {
     extensions: ['.js', '.ts', '.json'],
-    modules: [
-      path.join(__dirname, '../node_modules')
-    ],
+    modules: [path.join(__dirname, '../node_modules')],
     alias
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          'babel-loader',
-          'eslint-loader'
-        ],
+        use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
         test: /\.html$/,
-        use: [
-          'html-loader'
-        ]
+        use: ['html-loader']
       },
       {
         test: /\.pug$/,
-        use: [
-          'html-loader',
-          'pug-html-loader?basedir=' + src
-        ]
+        use: ['html-loader', 'pug-html-loader?basedir=' + src]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: path.posix.join(config().assetsSubDirectory || '', 'img/[name].[hash:7].[ext]')
+          name: path.posix.join(
+            config().assetsSubDirectory || '',
+            'img/[name].[hash:7].[ext]'
+          )
+        }
+      },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
         }
       },
       {
@@ -109,7 +109,10 @@ module.exports = merge({
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: path.posix.join(config().assetsSubDirectory || '', 'fonts/[name].[hash:7].[ext]')
+          name: path.posix.join(
+            config().assetsSubDirectory || '',
+            'fonts/[name].[hash:7].[ext]'
+          )
         }
       }
     ]
@@ -123,16 +126,19 @@ module.exports = merge({
       name: 'common'
     }),
 
-    ...views.map(entry => new HtmlWebpackPlugin({
-      filename: `${entry.name}.html`,
-      template: entry.filename,
-      chunks: entry.chunks,
-      includeDependent: true,
-      chunksSortMode: 'dependency',
-      inject: true
-    }))
+    ...views.map(
+      entry =>
+        new HtmlWebpackPlugin({
+          filename: `${entry.name}.html`,
+          template: entry.filename,
+          chunks: entry.chunks,
+          includeDependent: true,
+          chunksSortMode: 'dependency',
+          inject: true
+        })
+    )
   ],
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   }
-})
+});
