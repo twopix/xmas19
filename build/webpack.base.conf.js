@@ -93,7 +93,7 @@ module.exports = merge({
           limit: 10000,
           name: path.posix.join(
             config().assetsSubDirectory || '',
-            'img/[name].[hash:7].[ext]'
+            'img/[name].[ext]'
           )
         }
       },

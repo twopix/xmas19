@@ -107,7 +107,7 @@ body {
 
             .lp-background {
                 transition: all 0.35s ease;
-                background: url("http://i65.tinypic.com/v5wy3b.png");
+                background: url("/static/img/vynil.png");
                 background-size: cover;
                 animation: spin 1s infinite linear;
                 width: 100%;
@@ -172,7 +172,7 @@ body {
 
             div {
                 width: 2px;
-                background: #F44336;
+                background: #fff;
                 float: left;
                 height: 0%;
                 margin-right: 5px;
@@ -293,50 +293,6 @@ html {
             }
         }
 
-        .play-button {
-            position: absolute;
-            width: 55px;
-            height: 55px;
-            right: 10%;
-            border-radius: 50%;
-            top: -25px;
-            background: white;
-            box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.35);
-            text-align: center;
-            line-height: 57px;
-            font-size: 26px;
-            color: #D32F2F;
-            cursor: pointer;
-
-            .lp-background {
-                transition: all 0.35s ease;
-                background: url("http://i65.tinypic.com/v5wy3b.png");
-                background-size: cover;
-                animation: spin 1s infinite linear;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                position: absolute;
-            }
-
-            i {
-                z-index: 100;
-            }
-
-            .mdi-pause {
-                z-index: 100;
-                position: absolute;
-                right: 17.5px;
-                top: 17.4px;
-                color: white;
-                font-size: 20px;
-            }
-
-            &:hover {
-                box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
-            }
-        }
-
         .progress-bar {
             width: 100%;
             top: 100%;
@@ -350,26 +306,7 @@ html {
                 background: #F44336;
             }
         }
-
-        .visualizer {
-            position: absolute;
-            top: 25%;
-            left: 37.5%;
-            width: 0%;
-            height: 50%;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-
-            div {
-                width: 2px;
-                background: #F44336;
-                float: left;
-                height: 0%;
-                margin-right: 5px;
-                transition: all 0.1s ease;
-            }
-        }
+ 
     }
 
     .player.paused {

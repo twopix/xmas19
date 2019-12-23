@@ -1,7 +1,9 @@
 'use strict'
+let audio = new Audio('https://twopix.gr/newsletter/xmas16/songs/BlueDucks_FourFlossFiveSix.mp3')
 
 import '../lib/style'
-// import img from '../assets/images/octocat.png'
+import '../assets/images/vynil.png'
+
 /*
  * Rabbit Lyrics
  *
@@ -363,3 +365,65 @@ document.addEventListener(
   },
   false
 )
+// player js
+var $visualizers = document.querySelectorAll('.visualizer>div')
+// var $progressBar = document.querySelector('.progress-bar')
+var $progressBarRunner = document.querySelector('.progress-bar .runner')
+var songLength = 219 // in seconds
+var percentage = 0
+var $time = document.querySelector('.time')
+var $player = document.querySelector('.player')
+
+var playRunner = null
+
+function go () {
+  playRunner = setInterval(function () {
+    // visualizers
+    $visualizers.forEach(function (item) {
+      item.style.height = Math.random() * 90 + 10 + '%'
+    })
+    // progress bar
+    percentage += 0.15
+    if (percentage > 100) percentage = 0
+    $progressBarRunner.style.width = percentage + '%'
+
+    $time.innerText = calculateTime(songLength, percentage)
+  }, 250)
+}
+
+document.querySelector('.play-button').onclick = function () {
+  $player.classList.toggle('paused')
+  $player.classList.toggle('playing')
+  audio.play()
+  if (playRunner) {
+    audio.pause()
+    clearInterval(playRunner)
+    playRunner = null
+    $time.innerText = calculateTime(songLength, 100)
+  } else {
+    percentage = 0
+    go()
+  }
+}
+
+document.querySelector('.progress-bar').onclick = function (e) {
+  var posY = document.querySelector(this).offset().left
+  var clickY = e.pageX - posY
+  var width = document.querySelector(this).width()
+
+  percentage = (clickY / width) * 100
+}
+
+function calculateTime (songLength, percentage) {
+  // time
+  var currentLength = (songLength / 100) * percentage
+  var minutes = Math.floor(currentLength / 60)
+  var seconds = Math.floor(currentLength - minutes * 60)
+  if (seconds <= 9) {
+    return minutes + ':0' + seconds
+  } else {
+    return minutes + ':' + seconds
+  }
+}
+
+clearInterval(playRunner)
