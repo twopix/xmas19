@@ -42,12 +42,7 @@ module.exports = merge(require('./webpack.base.conf'), {
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      minimize: true
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+      minimize: false
     }),
     new ExtractTextPlugin(
       config().assetsSubDirectory + '/css/[name].[contenthash].css'

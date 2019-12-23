@@ -1,10 +1,11 @@
 'use strict'
-let audio = new Audio('https://twopix.gr/newsletter/xmas16/songs/BlueDucks_FourFlossFiveSix.mp3')
 
 import '../lib/style'
 import '../assets/images/vynil.png'
 import '../assets/images/kosides-trio.jpg'
+import '../assets/audio/We-wish-you-a-merry-Christmas.mp3'
 
+let audio = new Audio('/audio/We-wish-you-a-merry-Christmas.mp3')
 /*
  * Rabbit Lyrics
  *
@@ -350,7 +351,8 @@ document.addEventListener(
 
     for (let i = 0; i < elements.length; i++) {
       let element = elements[i]
-      let mediaElement = document.querySelector(element.dataset.media)
+      let mediaElement = audio
+      // let mediaElement = document.querySelector(element.dataset.media)
       let { viewMode, height, alignment } = element.dataset
       let options = {
         element,
@@ -370,7 +372,7 @@ document.addEventListener(
 var $visualizers = document.querySelectorAll('.visualizer>div')
 // var $progressBar = document.querySelector('.progress-bar')
 var $progressBarRunner = document.querySelector('.progress-bar .runner')
-var songLength = 219 // in seconds
+var songLength = 108 // in seconds
 var percentage = 0
 var $time = document.querySelector('.time')
 var $player = document.querySelector('.player')
