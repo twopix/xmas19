@@ -3,6 +3,7 @@ let audio = new Audio('https://twopix.gr/newsletter/xmas16/songs/BlueDucks_FourF
 
 import '../lib/style'
 import '../assets/images/vynil.png'
+import '../assets/images/kosides-trio.jpg'
 
 /*
  * Rabbit Lyrics
