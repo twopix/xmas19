@@ -1,5 +1,36 @@
 @itemsize: 6px;
 
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: black;
+
+  * {
+    box-sizing: inherit;
+    transition: all 0.5s ease;
+
+    &:before {
+      box-sizing: inherit;
+      transition: all 0.5s ease;
+    }
+
+    &:after {
+      box-sizing: inherit;
+      transition: all 0.5s ease;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      text-shadow: 1px 1px 5px #000000;
+    }
+  }
+}
+
 .main-wrapper {
   background: radial-gradient(ellipse at bottom, #a90e0e 5%, #4e0303 55%, #330000 78%);
   position: absolute;
@@ -207,6 +238,13 @@
   outline: 0;
 }
 
+.lyrics-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .rabbit-lyrics {
   position: relative;
   /* Must be relative, otherwise cannot calculate offset */
@@ -217,7 +255,7 @@
 
 .rabbit-lyrics__line {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.3em;
+  font-size: 70px;
   min-height: 3rem;
 
 }
