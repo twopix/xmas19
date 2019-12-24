@@ -1,6 +1,7 @@
 'use strict'
 
 import '../lib/style'
+import '../assets/images/xmas.jpg'
 import '../assets/images/vynil.png'
 import '../assets/images/kosides-trio.jpg'
 import '../assets/audio/We-wish-you-a-merry-Christmas.mp3'
